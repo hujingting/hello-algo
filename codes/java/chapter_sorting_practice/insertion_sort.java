@@ -1,7 +1,6 @@
 /**
- * File: insertion_sort.java
- * Created Time: 2022-11-25
- * Author: krahets (krahets@163.com)
+ * Created Time: 2023-7-12
+ * Author: jingtinghu
  */
 
 package chapter_sorting_practice;
@@ -11,15 +10,17 @@ import java.util.*;
 public class insertion_sort {
     /* 插入排序 */
     static void insertionSort(int[] nums) {
-        // 外循环：已排序区间为 [0, i-1]
-        for (int i = 1; i < nums.length; i++) {
+        //初始状态下，数组的第 1 个元素已完成排序
+        for(int i = 1; i < nums.length; i++) {
+            //选取数组的第 2 个元素作为 base ，将其插入到正确位置后，数组的前 2 个元素已排序。
             int base = nums[i], j = i - 1;
-            // 内循环：将 base 插入到已排序区间 [0, i-1] 中的正确位置
-            while (j >= 0 && nums[j] > base) {
-                nums[j + 1] = nums[j]; // 将 nums[j] 向右移动一位
+            // 内循环：将 base 插入到已排序区间[0, i-1] 中的正确位置
+            while (j >=0 && nums[j] > base) {
+                nums[j+1] = nums[j];
                 j--;
             }
-            nums[j + 1] = base;        // 将 base 赋值到正确位置
+            //将 base 赋值到正确位置
+            nums[j+1] = base;
         }
     }
 
