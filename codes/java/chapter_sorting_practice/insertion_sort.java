@@ -7,6 +7,7 @@ package chapter_sorting_practice;
 
 import java.util.*;
 
+
 public class insertion_sort {
     /* 插入排序 */
     static void insertionSort(int[] nums) {
@@ -24,9 +25,42 @@ public class insertion_sort {
         }
     }
 
+    /**
+     * 折半插入排序
+     */
+        
+static void halfSort(int[] nums, int size) {
+        int i, j, low, high, mid;
+        for (i = 2; i < size; i++) {
+            nums[0] = nums[i];
+            low = 1;
+            high = i - 1;
+            while (low <= high) {
+                mid = (low + high) / 2;
+                if (nums[mid] > nums[0]) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            }
+
+            for (j = i - 1; j >= low; j--) {
+                nums[j + 1] = nums[j];
+                nums[low] = nums[0];
+            }
+        }
+    }
+
+
+
+
     public static void main(String[] args) {
         int[] nums = { 4, 1, 3, 1, 5, 2 };
         insertionSort(nums);
         System.out.println("插入排序完成后 nums = " + Arrays.toString(nums));
+
+        int[] nums1 = { 4, 1, 3, 1, 5, 2 };
+        halfSort(nums1, nums1.length);
+        System.out.println("插入排序完成后 nums1 = " + Arrays.toString(nums1));
     }
 }

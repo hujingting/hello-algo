@@ -4,7 +4,7 @@
  * Author: krahets (krahets@163.com)
  */
 
-package chapter_sorting;
+package chapter_sorting_practice;
 
 import java.util.*;
 
