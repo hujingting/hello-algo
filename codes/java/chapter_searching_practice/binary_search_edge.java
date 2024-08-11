@@ -4,7 +4,7 @@
  * Author: krahets (krahets@163.com)
  */
 
-package chapter_searching;
+package chapter_searching_practice;
 
 public class binary_search_edge {
     /* 二分查找最左一个 target */
